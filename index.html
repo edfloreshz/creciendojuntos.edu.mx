@@ -1,0 +1,672 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Creciendo Juntos - Jardín de Niños</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: {
+                            50: '#fef2f2',
+                            100: '#fee2e2',
+                            200: '#fecaca',
+                            300: '#fca5a5',
+                            400: '#f87171',
+                            500: '#ef4444',
+                            600: '#dc2626',
+                            700: '#b91c1c',
+                            800: '#991b1b',
+                            900: '#7f1d1d'
+                        },
+                        secondary: {
+                            50: '#fdf2f8',
+                            100: '#fce7f3',
+                            200: '#fbcfe8',
+                            300: '#f9a8d4',
+                            400: '#f472b6',
+                            500: '#ec4899',
+                            600: '#db2777',
+                            700: '#be185d',
+                            800: '#9d174d',
+                            900: '#831843'
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+</head>
+
+<body class="bg-gradient-to-br from-primary-50 to-secondary-50">
+    <!-- Navigation -->
+    <nav class="bg-white shadow-lg fixed w-full z-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between h-16">
+                <div class="flex items-center">
+                    <div class="flex-shrink-0 flex items-center">
+                        <img src="res/logo-creciendo-juntos.png" alt="Creciendo Juntos" class="h-10 w-auto mr-3">
+                        <span class="font-bold text-xl text-gray-800">Creciendo Juntos</span>
+                    </div>
+                </div>
+                <div class="hidden md:flex items-center space-x-8">
+                    <a href="#inicio" class="text-gray-700 hover:text-primary-500 transition duration-300">Inicio</a>
+                    <a href="#niveles" class="text-gray-700 hover:text-primary-500 transition duration-300">Niveles</a>
+                    <a href="#programa"
+                        class="text-gray-700 hover:text-primary-500 transition duration-300">Programa</a>
+                    <a href="#admision"
+                        class="text-gray-700 hover:text-primary-500 transition duration-300">Admisión</a>
+                    <a href="#contacto"
+                        class="text-gray-700 hover:text-primary-500 transition duration-300">Contacto</a>
+                </div>
+                <div class="md:hidden flex items-center">
+                    <button id="mobile-menu-button" class="text-gray-700 hover:text-primary-500">
+                        <i class="fas fa-bars text-xl"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+        <!-- Mobile menu -->
+        <div id="mobile-menu" class="hidden md:hidden bg-white border-t">
+            <div class="px-2 pt-2 pb-3 space-y-1">
+                <a href="#inicio" class="block px-3 py-2 text-gray-700 hover:text-primary-500">Inicio</a>
+                <a href="#niveles" class="block px-3 py-2 text-gray-700 hover:text-primary-500">Niveles</a>
+                <a href="#programa" class="block px-3 py-2 text-gray-700 hover:text-primary-500">Programa</a>
+                <a href="#admision" class="block px-3 py-2 text-gray-700 hover:text-primary-500">Admisión</a>
+                <a href="#contacto" class="block px-3 py-2 text-gray-700 hover:text-primary-500">Contacto</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Header Image -->
+    <section class="relative h-96 md:h-[500px] overflow-hidden">
+        <div class="absolute inset-0">
+            <img src="res/header.jpg" alt="Niños de Creciendo Juntos" class="w-full h-full object-cover object-center">
+            <div class="absolute inset-0 bg-gradient-to-r from-primary-900/70 to-secondary-900/70"></div>
+        </div>
+        <div class="relative z-10 flex items-center justify-center h-full">
+            <div class="text-center text-white px-4">
+                <h1 class="text-3xl md:text-5xl lg:text-6xl font-bold mb-4 drop-shadow-lg">
+                    ¡Bienvenidos a
+                    <span class="text-yellow-300">Creciendo Juntos</span>!
+                </h1>
+                <p class="text-lg md:text-xl lg:text-2xl mb-6 drop-shadow-md max-w-3xl mx-auto">
+                    Donde cada día es una nueva aventura de aprendizaje, risas y crecimiento
+                </p>
+                <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                    <a href="#admision"
+                        class="bg-white text-primary-600 px-8 py-3 rounded-full font-semibold hover:bg-gray-100 transition duration-300 shadow-lg">
+                        Únete a Nuestra Familia
+                    </a>
+                    <a href="#programa"
+                        class="bg-primary-500 text-white px-8 py-3 rounded-full font-semibold hover:bg-primary-600 transition duration-300 shadow-lg border border-white/30">
+                        Conoce Nuestro Programa
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Hero Section -->
+    <section id="inicio" class="py-20">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold text-gray-800 mb-4">
+                    Un espacio donde los pequeños
+                    <span class="text-primary-500">descubren y crecen</span>
+                </h2>
+                <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+                    En Creciendo Juntos, cada niño es único y especial. Ofrecemos un ambiente lleno de amor,
+                    creatividad y oportunidades educativas que impulsan su desarrollo integral.
+                </p>
+            </div>
+            <div class="mt-16 grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div class="bg-white rounded-xl p-6 shadow-lg text-center">
+                    <i class="fas fa-heart text-4xl text-secondary-500 mb-4"></i>
+                    <h3 class="text-xl font-semibold text-gray-800 mb-2">Ambiente Amoroso</h3>
+                    <p class="text-gray-600">Cuidado personalizado y atención individualizada para cada niño</p>
+                </div>
+                <div class="bg-white rounded-xl p-6 shadow-lg text-center">
+                    <i class="fas fa-graduation-cap text-4xl text-primary-500 mb-4"></i>
+                    <h3 class="text-xl font-semibold text-gray-800 mb-2">Educación Integral</h3>
+                    <p class="text-gray-600">Desarrollo cognitivo, emocional, social y físico equilibrado</p>
+                </div>
+                <div class="bg-white rounded-xl p-6 shadow-lg text-center">
+                    <i class="fas fa-users text-4xl text-secondary-500 mb-4"></i>
+                    <h3 class="text-xl font-semibold text-gray-800 mb-2">Comunidad Unida</h3>
+                    <p class="text-gray-600">Colaboración estrecha entre familias, maestros y estudiantes</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Niveles Educativos -->
+    <section id="niveles" class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold text-gray-800 mb-4">Niveles Educativos</h2>
+                <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+                    Acompañamos a los niños en cada etapa de su desarrollo, adaptando nuestro enfoque educativo
+                    a las necesidades específicas de cada edad.
+                </p>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- Maternal -->
+                <div class="bg-gradient-to-br from-primary-50 to-primary-100 rounded-xl p-8 shadow-lg">
+                    <div class="text-center mb-6">
+                        <i class="fas fa-baby text-5xl text-primary-500 mb-4"></i>
+                        <h3 class="text-2xl font-bold text-gray-800">Maternal</h3>
+                        <p class="text-primary-600 font-semibold">1 - 2 años</p>
+                    </div>
+                    <ul class="space-y-3 text-gray-700">
+                        <li class="flex items-center">
+                            <i class="fas fa-check text-primary-500 mr-3"></i>
+                            Estimulación temprana
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-check text-primary-500 mr-3"></i>
+                            Desarrollo sensorial
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-check text-primary-500 mr-3"></i>
+                            Primeras palabras
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-check text-primary-500 mr-3"></i>
+                            Exploración segura
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-check text-primary-500 mr-3"></i>
+                            Rutinas básicas
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Preescolar 1 -->
+                <div class="bg-gradient-to-br from-secondary-50 to-secondary-100 rounded-xl p-8 shadow-lg">
+                    <div class="text-center mb-6">
+                        <i class="fas fa-child text-5xl text-secondary-500 mb-4"></i>
+                        <h3 class="text-2xl font-bold text-gray-800">Preescolar 1</h3>
+                        <p class="text-secondary-600 font-semibold">3 - 4 años</p>
+                    </div>
+                    <ul class="space-y-3 text-gray-700">
+                        <li class="flex items-center">
+                            <i class="fas fa-check text-secondary-500 mr-3"></i>
+                            Habilidades motoras
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-check text-secondary-500 mr-3"></i>
+                            Lenguaje expresivo
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-check text-secondary-500 mr-3"></i>
+                            Juego cooperativo
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-check text-secondary-500 mr-3"></i>
+                            Creatividad artística
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-check text-secondary-500 mr-3"></i>
+                            Autonomía personal
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Preescolar 2 -->
+                <div class="bg-gradient-to-br from-primary-50 to-primary-100 rounded-xl p-8 shadow-lg">
+                    <div class="text-center mb-6">
+                        <i class="fas fa-school text-5xl text-primary-500 mb-4"></i>
+                        <h3 class="text-2xl font-bold text-gray-800">Preescolar 2</h3>
+                        <p class="text-primary-600 font-semibold">4 - 5 años</p>
+                    </div>
+                    <ul class="space-y-3 text-gray-700">
+                        <li class="flex items-center">
+                            <i class="fas fa-check text-primary-500 mr-3"></i>
+                            Pre-lectura y escritura
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-check text-primary-500 mr-3"></i>
+                            Conceptos matemáticos
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-check text-primary-500 mr-3"></i>
+                            Pensamiento crítico
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-check text-primary-500 mr-3"></i>
+                            Trabajo en equipo
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-check text-primary-500 mr-3"></i>
+                            Preparación primaria
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Programa Educativo -->
+    <section id="programa" class="py-20 bg-gradient-to-br from-primary-50 to-secondary-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold text-gray-800 mb-4">Nuestro Programa Educativo</h2>
+                <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+                    Un enfoque integral que combina metodologías modernas con valores tradicionales,
+                    promoviendo el desarrollo completo de cada niño.
+                </p>
+            </div>
+
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center mb-16">
+                <div>
+                    <h3 class="text-2xl font-bold text-gray-800 mb-6">Metodología Innovadora</h3>
+                    <div class="space-y-4">
+                        <div class="flex items-start">
+                            <i class="fas fa-lightbulb text-secondary-500 text-2xl mr-4 mt-1"></i>
+                            <div>
+                                <h4 class="font-semibold text-gray-800 mb-2">Aprendizaje por Descubrimiento</h4>
+                                <p class="text-gray-600">Los niños exploran y aprenden a través de experiencias
+                                    prácticas y significativas.</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start">
+                            <i class="fas fa-paint-brush text-primary-500 text-2xl mr-4 mt-1"></i>
+                            <div>
+                                <h4 class="font-semibold text-gray-800 mb-2">Expresión Artística</h4>
+                                <p class="text-gray-600">Fomentamos la creatividad a través del arte, la música y el
+                                    movimiento.</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start">
+                            <i class="fas fa-leaf text-secondary-500 text-2xl mr-4 mt-1"></i>
+                            <div>
+                                <h4 class="font-semibold text-gray-800 mb-2">Conexión con la Naturaleza</h4>
+                                <p class="text-gray-600">Actividades al aire libre que promueven el respeto por el medio
+                                    ambiente.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="bg-white rounded-xl p-8 shadow-lg">
+                    <h3 class="text-2xl font-bold text-gray-800 mb-6">Áreas de Desarrollo</h3>
+                    <div class="grid grid-cols-2 gap-4">
+                        <div class="text-center p-4 bg-primary-50 rounded-lg">
+                            <i class="fas fa-brain text-primary-500 text-3xl mb-2"></i>
+                            <p class="font-semibold text-gray-800">Cognitivo</p>
+                        </div>
+                        <div class="text-center p-4 bg-secondary-50 rounded-lg">
+                            <i class="fas fa-heart text-secondary-500 text-3xl mb-2"></i>
+                            <p class="font-semibold text-gray-800">Emocional</p>
+                        </div>
+                        <div class="text-center p-4 bg-primary-50 rounded-lg">
+                            <i class="fas fa-handshake text-primary-500 text-3xl mb-2"></i>
+                            <p class="font-semibold text-gray-800">Social</p>
+                        </div>
+                        <div class="text-center p-4 bg-secondary-50 rounded-lg">
+                            <i class="fas fa-running text-secondary-500 text-3xl mb-2"></i>
+                            <p class="font-semibold text-gray-800">Físico</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Actividades Destacadas -->
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div class="bg-white rounded-xl p-6 shadow-lg">
+                    <i class="fas fa-book-open text-primary-500 text-4xl mb-4"></i>
+                    <h4 class="text-xl font-semibold text-gray-800 mb-3">Lectura Temprana</h4>
+                    <p class="text-gray-600">Cuentacuentos interactivos y actividades que fomentan el amor por la
+                        lectura desde temprana edad.</p>
+                </div>
+                <div class="bg-white rounded-xl p-6 shadow-lg">
+                    <i class="fas fa-calculator text-secondary-500 text-4xl mb-4"></i>
+                    <h4 class="text-xl font-semibold text-gray-800 mb-3">Matemáticas Lúdicas</h4>
+                    <p class="text-gray-600">Conceptos matemáticos básicos a través de juegos, manipulativos y
+                        actividades divertidas.</p>
+                </div>
+                <div class="bg-white rounded-xl p-6 shadow-lg">
+                    <i class="fas fa-language text-primary-500 text-4xl mb-4"></i>
+                    <h4 class="text-xl font-semibold text-gray-800 mb-3">Inglés Básico</h4>
+                    <p class="text-gray-600">Introducción al idioma inglés mediante canciones, juegos y actividades
+                        interactivas.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Formulario de Admisión -->
+    <section id="admision" class="py-20 bg-white">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold text-gray-800 mb-4">Proceso de Admisión</h2>
+                <p class="text-xl text-gray-600 max-w-2xl mx-auto">
+                    ¡Nos encantaría conocer a tu familia! Completa el formulario y nos pondremos en contacto contigo
+                    para programar una visita y conocer más sobre nuestro jardín.
+                </p>
+            </div>
+
+            <form class="bg-gradient-to-br from-primary-50 to-secondary-50 rounded-xl p-8 shadow-lg">
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
+                    <div>
+                        <label for="nombre-nino" class="block text-sm font-medium text-gray-700 mb-2">Nombre del niño/a
+                            *</label>
+                        <input type="text" id="nombre-nino" name="nombre-nino" required
+                            class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent">
+                    </div>
+                    <div>
+                        <label for="fecha-nacimiento" class="block text-sm font-medium text-gray-700 mb-2">Fecha de
+                            nacimiento *</label>
+                        <input type="date" id="fecha-nacimiento" name="fecha-nacimiento" required
+                            class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent">
+                    </div>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
+                    <div>
+                        <label for="nombre-padre" class="block text-sm font-medium text-gray-700 mb-2">Nombre del
+                            padre/madre *</label>
+                        <input type="text" id="nombre-padre" name="nombre-padre" required
+                            class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent">
+                    </div>
+                    <div>
+                        <label for="telefono" class="block text-sm font-medium text-gray-700 mb-2">Teléfono *</label>
+                        <input type="tel" id="telefono" name="telefono" required
+                            class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent">
+                    </div>
+                </div>
+
+                <div class="mb-6">
+                    <label for="email" class="block text-sm font-medium text-gray-700 mb-2">Correo electrónico *</label>
+                    <input type="email" id="email" name="email" required
+                        class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent">
+                </div>
+
+                <div class="mb-6">
+                    <label for="nivel-interes" class="block text-sm font-medium text-gray-700 mb-2">Nivel de interés
+                        *</label>
+                    <select id="nivel-interes" name="nivel-interes" required
+                        class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent">
+                        <option value="">Selecciona un nivel</option>
+                        <option value="maternal">Maternal (1-2 años)</option>
+                        <option value="preescolar1">Preescolar 1 (3-4 años)</option>
+                        <option value="preescolar2">Preescolar 2 (4-5 años)</option>
+                    </select>
+                </div>
+
+                <div class="mb-6">
+                    <label for="horario-preferencia" class="block text-sm font-medium text-gray-700 mb-2">Horario de
+                        preferencia</label>
+                    <select id="horario-preferencia" name="horario-preferencia"
+                        class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent">
+                        <option value="">Selecciona un horario</option>
+                        <option value="matutino">Matutino (8:00 AM - 1:00 PM)</option>
+                        <option value="vespertino">Vespertino (2:00 PM - 6:00 PM)</option>
+                        <option value="extendido">Horario extendido (8:00 AM - 6:00 PM)</option>
+                    </select>
+                </div>
+
+                <div class="mb-6">
+                    <label for="comentarios" class="block text-sm font-medium text-gray-700 mb-2">Comentarios
+                        adicionales</label>
+                    <textarea id="comentarios" name="comentarios" rows="4"
+                        placeholder="Cuéntanos sobre las necesidades especiales, intereses o cualquier información que consideres importante..."
+                        class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent"></textarea>
+                </div>
+
+                <div class="mb-6">
+                    <label class="flex items-start">
+                        <input type="checkbox" required class="mt-1 mr-3 text-primary-500 focus:ring-primary-500">
+                        <span class="text-sm text-gray-700">
+                            Acepto los términos y condiciones y autorizo el uso de mis datos para el proceso de
+                            admisión. *
+                        </span>
+                    </label>
+                </div>
+
+                <div class="text-center">
+                    <button type="submit"
+                        class="bg-primary-500 text-white px-8 py-3 rounded-full font-semibold hover:bg-primary-600 transition duration-300 shadow-lg">
+                        <i class="fas fa-paper-plane mr-2"></i>
+                        Enviar Solicitud
+                    </button>
+                </div>
+            </form>
+        </div>
+    </section>
+
+    <!-- Contacto -->
+    <section id="contacto" class="py-20 bg-gradient-to-br from-primary-50 to-secondary-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold text-gray-800 mb-4">Contáctanos</h2>
+                <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+                    Estamos aquí para responder todas tus preguntas. No dudes en visitarnos o ponerte en contacto con
+                    nosotros.
+                </p>
+            </div>
+
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12">
+                <!-- Información de contacto -->
+                <div class="space-y-8">
+                    <div class="bg-white rounded-xl p-6 shadow-lg">
+                        <div class="flex items-center mb-4">
+                            <i class="fas fa-map-marker-alt text-primary-500 text-2xl mr-4"></i>
+                            <h3 class="text-xl font-semibold text-gray-800">Ubicación</h3>
+                        </div>
+                        <p class="text-gray-600 ml-10">
+                            Av. Educación #123<br>
+                            Colonia Jardines<br>
+                            C.P. 12345, Ciudad de México
+                        </p>
+                    </div>
+
+                    <div class="bg-white rounded-xl p-6 shadow-lg">
+                        <div class="flex items-center mb-4">
+                            <i class="fas fa-phone text-secondary-500 text-2xl mr-4"></i>
+                            <h3 class="text-xl font-semibold text-gray-800">Teléfono</h3>
+                        </div>
+                        <p class="text-gray-600 ml-10">
+                            <a href="tel:+525512345678" class="hover:text-secondary-500 transition duration-300">
+                                +52 55 1234 5678
+                            </a>
+                        </p>
+                    </div>
+
+                    <div class="bg-white rounded-xl p-6 shadow-lg">
+                        <div class="flex items-center mb-4">
+                            <i class="fas fa-envelope text-primary-500 text-2xl mr-4"></i>
+                            <h3 class="text-xl font-semibold text-gray-800">Correo Electrónico</h3>
+                        </div>
+                        <p class="text-gray-600 ml-10">
+                            <a href="mailto:info@creciendojuntos.edu.mx"
+                                class="hover:text-primary-500 transition duration-300">
+                                info@creciendojuntos.edu.mx
+                            </a>
+                        </p>
+                    </div>
+
+                    <div class="bg-white rounded-xl p-6 shadow-lg">
+                        <div class="flex items-center mb-4">
+                            <i class="fas fa-clock text-secondary-500 text-2xl mr-4"></i>
+                            <h3 class="text-xl font-semibold text-gray-800">Horarios de Atención</h3>
+                        </div>
+                        <div class="text-gray-600 ml-10 space-y-1">
+                            <p><strong>Lunes a Viernes:</strong> 7:00 AM - 7:00 PM</p>
+                            <p><strong>Sábados:</strong> 9:00 AM - 2:00 PM</p>
+                            <p><strong>Domingos:</strong> Cerrado</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Formulario de contacto -->
+                <div class="bg-white rounded-xl p-8 shadow-lg">
+                    <h3 class="text-2xl font-bold text-gray-800 mb-6">Envíanos un Mensaje</h3>
+                    <form class="space-y-6">
+                        <div>
+                            <label for="contact-nombre" class="block text-sm font-medium text-gray-700 mb-2">Nombre
+                                completo *</label>
+                            <input type="text" id="contact-nombre" name="contact-nombre" required
+                                class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent">
+                        </div>
+
+                        <div>
+                            <label for="contact-email" class="block text-sm font-medium text-gray-700 mb-2">Correo
+                                electrónico *</label>
+                            <input type="email" id="contact-email" name="contact-email" required
+                                class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent">
+                        </div>
+
+                        <div>
+                            <label for="contact-telefono"
+                                class="block text-sm font-medium text-gray-700 mb-2">Teléfono</label>
+                            <input type="tel" id="contact-telefono" name="contact-telefono"
+                                class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent">
+                        </div>
+
+                        <div>
+                            <label for="contact-asunto" class="block text-sm font-medium text-gray-700 mb-2">Asunto
+                                *</label>
+                            <select id="contact-asunto" name="contact-asunto" required
+                                class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent">
+                                <option value="">Selecciona un asunto</option>
+                                <option value="informacion">Información general</option>
+                                <option value="admision">Proceso de admisión</option>
+                                <option value="visita">Agendar visita</option>
+                                <option value="otro">Otro</option>
+                            </select>
+                        </div>
+
+                        <div>
+                            <label for="contact-mensaje" class="block text-sm font-medium text-gray-700 mb-2">Mensaje
+                                *</label>
+                            <textarea id="contact-mensaje" name="contact-mensaje" rows="5" required
+                                placeholder="Escribe tu mensaje aquí..."
+                                class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent"></textarea>
+                        </div>
+
+                        <button type="submit"
+                            class="w-full bg-primary-500 text-white px-6 py-3 rounded-lg font-semibold hover:bg-primary-600 transition duration-300 shadow-lg">
+                            <i class="fas fa-paper-plane mr-2"></i>
+                            Enviar Mensaje
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-800 text-white py-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div>
+                    <div class="flex items-center mb-4">
+                        <img src="res/logo-creciendo-juntos.png" alt="Creciendo Juntos"
+                            class="h-8 w-auto mr-3 filter brightness-0 invert">
+                        <span class="font-bold text-xl">Creciendo Juntos</span>
+                    </div>
+                    <p class="text-gray-400 mb-4">
+                        Un jardín de niños comprometido con el desarrollo integral de cada pequeño,
+                        donde crecen en un ambiente de amor, respeto y aprendizaje.
+                    </p>
+                    <div class="flex space-x-4">
+                        <a href="#" class="text-gray-400 hover:text-primary-400 transition duration-300">
+                            <i class="fab fa-facebook text-xl"></i>
+                        </a>
+                        <a href="#" class="text-gray-400 hover:text-primary-400 transition duration-300">
+                            <i class="fab fa-instagram text-xl"></i>
+                        </a>
+                        <a href="#" class="text-gray-400 hover:text-primary-400 transition duration-300">
+                            <i class="fab fa-whatsapp text-xl"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <div>
+                    <h4 class="font-semibold text-lg mb-4">Enlaces Rápidos</h4>
+                    <ul class="space-y-2">
+                        <li><a href="#inicio" class="text-gray-400 hover:text-white transition duration-300">Inicio</a>
+                        </li>
+                        <li><a href="#niveles" class="text-gray-400 hover:text-white transition duration-300">Niveles
+                                Educativos</a></li>
+                        <li><a href="#programa" class="text-gray-400 hover:text-white transition duration-300">Programa
+                                Educativo</a></li>
+                        <li><a href="#admision"
+                                class="text-gray-400 hover:text-white transition duration-300">Admisión</a></li>
+                        <li><a href="#contacto"
+                                class="text-gray-400 hover:text-white transition duration-300">Contacto</a></li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h4 class="font-semibold text-lg mb-4">Contacto</h4>
+                    <div class="space-y-2 text-gray-400">
+                        <p><i class="fas fa-map-marker-alt mr-2"></i>Av. Educación #123, Jardines</p>
+                        <p><i class="fas fa-phone mr-2"></i>+52 55 1234 5678</p>
+                        <p><i class="fas fa-envelope mr-2"></i>info@creciendojuntos.edu.mx</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="border-t border-gray-700 mt-8 pt-8 text-center text-gray-400">
+                <p>&copy; 2025 Creciendo Juntos. Todos los derechos reservados.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script>
+        // Mobile menu toggle
+        const mobileMenuButton = document.getElementById('mobile-menu-button');
+        const mobileMenu = document.getElementById('mobile-menu');
+
+        mobileMenuButton.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                    // Close mobile menu if open
+                    mobileMenu.classList.add('hidden');
+                }
+            });
+        });
+
+        // Form submission handlers
+        document.querySelector('#admision form').addEventListener('submit', function (e) {
+            e.preventDefault();
+            alert('¡Gracias por tu interés! Nos pondremos en contacto contigo muy pronto.');
+        });
+
+        document.querySelector('#contacto form').addEventListener('submit', function (e) {
+            e.preventDefault();
+            alert('¡Mensaje enviado! Te responderemos a la brevedad.');
+        });
+
+        // Add scroll effect to navigation
+        window.addEventListener('scroll', () => {
+            const nav = document.querySelector('nav');
+            if (window.scrollY > 100) {
+                nav.classList.add('shadow-lg');
+            } else {
+                nav.classList.remove('shadow-lg');
+            }
+        });
+    </script>
+</body>
+
+</html>
