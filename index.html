@@ -355,8 +355,27 @@
                     para programar una visita y conocer más sobre nuestro jardín.
                 </p>
             </div>
+            <!-- Success banner -->
+            <div id="admision-success" class="hidden mb-6">
+                <div class="rounded-lg bg-green-50 border border-green-200 p-4 text-green-800 flex items-start">
+                    <i class="fas fa-check-circle mr-3 mt-0.5"></i>
+                    <div>
+                        <p class="font-semibold">¡Solicitud enviada!</p>
+                        <p>Gracias por tu interés. Te contactaremos muy pronto para continuar el proceso.</p>
+                    </div>
+                </div>
+            </div>
 
-            <form class="bg-gradient-to-br from-primary-50 to-secondary-50 rounded-xl p-8 shadow-lg">
+            <form class="bg-gradient-to-br from-primary-50 to-secondary-50 rounded-xl p-8 shadow-lg"
+                action="https://formsubmit.co/coordinacion.creciendo.juntos99@gmail.com" method="POST">
+                <!-- FormSubmit config -->
+                <input type="hidden" name="_subject" value="Nueva solicitud de admisión - Creciendo Juntos">
+                <input type="hidden" name="_template" value="basic">
+                <input type="hidden" name="_captcha" value="false">
+                <input type="hidden" name="_next" value="https://creciendojuntos.edu.mx/gracias.html?tipo=admision">
+                <input type="text" name="_honey" class="hidden" tabindex="-1" autocomplete="off">
+                <input type="hidden" name="_autoresponse"
+                    value="¡Gracias por tu interés en Creciendo Juntos! Hemos recibido tu solicitud de admisión y te contactaremos muy pronto.">
                 <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
                     <div>
                         <label for="nombre-nino" class="block text-sm font-medium text-gray-700 mb-2">Nombre del niño/a
@@ -455,6 +474,16 @@
                     nosotros.
                 </p>
             </div>
+            <!-- Success banner -->
+            <div id="contacto-success" class="hidden mb-6">
+                <div class="rounded-lg bg-green-50 border border-green-200 p-4 text-green-800 flex items-start">
+                    <i class="fas fa-check-circle mr-3 mt-0.5"></i>
+                    <div>
+                        <p class="font-semibold">¡Mensaje enviado!</p>
+                        <p>Gracias por escribirnos. Te responderemos a la brevedad.</p>
+                    </div>
+                </div>
+            </div>
 
             <div class="grid grid-cols-1 lg:grid-cols-2 gap-12">
                 <!-- Información de contacto -->
@@ -489,9 +518,9 @@
                             <h3 class="text-xl font-semibold text-gray-800">Correo Electrónico</h3>
                         </div>
                         <p class="text-gray-600 ml-10">
-                            <a href="mailto:coordinación.creciendo.juntos99@gmail.com"
+                            <a href="mailto:coordinacion.creciendo.juntos99@gmail.com"
                                 class="hover:text-primary-500 transition duration-300">
-                                coordinación.creciendo.juntos99@gmail.com
+                                coordinacion.creciendo.juntos99@gmail.com
                             </a>
                         </p>
                     </div>
@@ -513,7 +542,17 @@
                 <!-- Formulario de contacto -->
                 <div class="bg-white rounded-xl p-8 shadow-lg">
                     <h3 class="text-2xl font-bold text-gray-800 mb-6">Envíanos un Mensaje</h3>
-                    <form class="space-y-6">
+                    <form class="space-y-6" action="https://formsubmit.co/coordinacion.creciendo.juntos99@gmail.com"
+                        method="POST">
+                        <!-- FormSubmit config -->
+                        <input type="hidden" name="_subject" value="Nuevo mensaje de contacto - Creciendo Juntos">
+                        <input type="hidden" name="_template" value="basic">
+                        <input type="hidden" name="_captcha" value="false">
+                        <input type="hidden" name="_next"
+                            value="https://creciendojuntos.edu.mx/gracias.html?tipo=contacto">
+                        <input type="text" name="_honey" class="hidden" tabindex="-1" autocomplete="off">
+                        <input type="hidden" name="_autoresponse"
+                            value="¡Gracias por contactarnos! Hemos recibido tu mensaje y te responderemos a la brevedad.">
                         <div>
                             <label for="contact-nombre" class="block text-sm font-medium text-gray-700 mb-2">Nombre
                                 completo *</label>
@@ -613,7 +652,7 @@
                     <div class="space-y-2 text-white/80">
                         <p><i class="fas fa-map-marker-alt mr-2"></i>Av. Mártires de Cananea #341 y Monteverde</p>
                         <p><i class="fas fa-phone mr-2"></i>+52 662 207 7818</p>
-                        <p><i class="fas fa-envelope mr-2"></i>coordinación.creciendo.juntos99@gmail.com</p>
+                        <p><i class="fas fa-envelope mr-2"></i>coordinacion.creciendo.juntos99@gmail.com</p>
                     </div>
                 </div>
             </div>
@@ -650,15 +689,49 @@
             });
         });
 
-        // Form submission handlers
-        document.querySelector('#admision form').addEventListener('submit', function (e) {
-            e.preventDefault();
-            alert('¡Gracias por tu interés! Nos pondremos en contacto contigo muy pronto.');
-        });
+        // Submit UX (disable button and show spinner)
+        const admisionForm = document.querySelector('#admision form');
+        if (admisionForm) {
+            admisionForm.addEventListener('submit', function () {
+                const btn = admisionForm.querySelector('button[type="submit"]');
+                if (btn) {
+                    btn.disabled = true;
+                    btn.classList.add('opacity-70', 'cursor-not-allowed');
+                    btn.innerHTML = '<i class="fas fa-circle-notch fa-spin mr-2"></i>Enviando...';
+                }
+            });
+        }
 
-        document.querySelector('#contacto form').addEventListener('submit', function (e) {
-            e.preventDefault();
-            alert('¡Mensaje enviado! Te responderemos a la brevedad.');
+        const contactoForm = document.querySelector('#contacto form');
+        if (contactoForm) {
+            contactoForm.addEventListener('submit', function () {
+                const btn = contactoForm.querySelector('button[type="submit"]');
+                if (btn) {
+                    btn.disabled = true;
+                    btn.classList.add('opacity-70', 'cursor-not-allowed');
+                    btn.innerHTML = '<i class="fas fa-circle-notch fa-spin mr-2"></i>Enviando...';
+                }
+            });
+        }
+
+        // Success banners based on redirect param
+        document.addEventListener('DOMContentLoaded', () => {
+            const params = new URLSearchParams(window.location.search);
+            const enviado = params.get('enviado');
+            if (enviado === 'admision') {
+                const el = document.getElementById('admision-success');
+                if (el) {
+                    el.classList.remove('hidden');
+                }
+                // Clean URL
+                history.replaceState(null, '', '#admision');
+            } else if (enviado === 'contacto') {
+                const el = document.getElementById('contacto-success');
+                if (el) {
+                    el.classList.remove('hidden');
+                }
+                history.replaceState(null, '', '#contacto');
+            }
         });
 
         // Add scroll effect to navigation
